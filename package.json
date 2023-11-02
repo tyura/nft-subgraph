@@ -1,18 +1,23 @@
 {
-  "name": "onchain-nft",
+  "name": "onchain-metadata-nft",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ onchain-nft",
-    "create-local": "graph create --node http://localhost:8020/ onchain-nft",
-    "remove-local": "graph remove --node http://localhost:8020/ onchain-nft",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 onchain-nft",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ onchain-metadata-nft",
+    "create-local": "graph create --node http://localhost:8020/ onchain-metadata-nft",
+    "remove-local": "graph remove --node http://localhost:8020/ onchain-metadata-nft",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 onchain-metadata-nft",
     "test": "graph test"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.60.0",
-    "@graphprotocol/graph-ts": "0.30.0"
+    "@graphprotocol/graph-cli": "^0.60.0",
+    "@graphprotocol/graph-ts": "0.30.0",
+    "buffer": "^6.0.3",
+    "dotenv": "^16.3.1"
   },
-  "devDependencies": { "matchstick-as": "0.5.0" }
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "matchstick-as": "0.5.0"
+  }
 }

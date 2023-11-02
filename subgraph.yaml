@@ -6,7 +6,7 @@ dataSources:
     name: Contract
     network: goerli
     source:
-      address: "0x2D756c111055206c118B50A064574191c5ADBea2"
+      address: {{address}}
       abi: Contract
       startBlock: 9960000
     mapping:
@@ -14,17 +14,14 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - Approval
-        - ApprovalForAll
         - Transfer
+        - NFT
       abis:
         - name: Contract
           file: ./abis/Contract.json
       eventHandlers:
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
+        - event: MetadataUpdate(uint256)
+          handler: handleMetadataUpdate
       file: ./src/contract.ts
