@@ -3,6 +3,8 @@
 This is a sample subgraph for indexing on-chain metadata of NFTs.
 
 ## Usage
+Update the contract address in both the subgraph.yaml and networks.json files with your contract address.
+
 Generates a set of helper functions from the graphql schema of a project.
 ```zsh
 graph codegen
